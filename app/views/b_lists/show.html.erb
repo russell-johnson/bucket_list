@@ -8,10 +8,12 @@
     <p>Due Date: <%= item.due_date %></p>
     <p>location: <%= item.location %></p>
     <%= link_to '|  Edit Item  |', edit_b_list_item_path(@b_list, item) %>
+    <%= link_to ' Delete Item  |', @item.destroy %>
   <% end %>
 <% else %>
   <%= link_to 'Add Item', new_b_list_item_path(@b_list) %>
 <% end %>
 <br/>
-  <%= link_to '|  Edit  |', edit_b_list_path(@b_list) %>
-  <%= link_to 'Add Item', new_b_list_item_path(@b_list) %>
+  <%= link_to ' Edit  |', edit_b_list_path(@b_list) %>
+  <%= link_to 'Add Bucket  |', new_b_list_item_path(@b_list) %>
+  <%= link_to ' Delete  |', @b_list.destroy %>

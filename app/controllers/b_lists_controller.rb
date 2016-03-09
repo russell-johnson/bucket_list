@@ -1,6 +1,6 @@
 class BListsController < ApplicationController
   def index
-    @b_lists = BList.all 
+    @b_lists = BList.all
   end
 
   def show
@@ -32,6 +32,11 @@ class BListsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @b_list.destroy
+    redirect_to b_lists_path
   end
 
 

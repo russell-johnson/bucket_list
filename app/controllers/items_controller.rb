@@ -1,14 +1,15 @@
 class ItemsController < ApplicationController
+  before_action :b_list, only: [:new, :create]
   def index
     @items = Items.all
   end
 
   def show
+
     @item = Item.find(params[:id])
   end
 
   def new
-    @b_list = BList.find(params[:b_list_id])
     @item = Item.new
   end
 
@@ -27,7 +28,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    b_list
+
     @item = @b_list.items.create(item_params)
 
     if @item.save
@@ -37,11 +38,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item.destroy
+    redirect_to b_lists_path
+  end
 
 
   private
 
   def b_list
+    binding.pry
     @b_list = BList.find(params[:b_list_id])
   end
 
