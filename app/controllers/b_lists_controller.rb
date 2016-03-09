@@ -1,15 +1,14 @@
 class BListsController < ApplicationController
+  before_action :b_list, only: [:destroy, :edit, :update, :show]
   def index
     @b_lists = BList.all
   end
 
   def show
-    @b_list = BList.find(params[:id])
     @items = @b_list.items
   end
 
   def edit
-    @b_list = BList.find(params[:id])
   end
 
   def update
@@ -42,6 +41,9 @@ class BListsController < ApplicationController
 
 
   private
+  def b_list
+    @b_list = BList.find(params[:id])
+  end
 
   def b_list_params
     params.require(:b_list).permit(:name, :date_created, :date_completed)

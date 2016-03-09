@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-  belongs_to :b_list, dependent: :delete
+  belongs_to :b_list
 end

@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
-  before_action :b_list, only: [:new, :create]
+  before_action :b_list, only: [:new, :create, :destroy]
+  before_action :item, only: [:destroy, :edit, :update, :show]
   def index
     @items = Items.all
   end
 
   def show
-
-    @item = Item.find(params[:id])
   end
 
   def new
@@ -15,11 +14,9 @@ class ItemsController < ApplicationController
 
   def edit
     @b_list = BList.find(params[:b_list_id])
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(params[:item].permit(:name, :due_date, :location))
       redirect_to b_list_path(params[:b_list_id])
     else
@@ -40,20 +37,19 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to b_lists_path
+    redirect_to b_list_path(@b_list)
   end
 
 
   private
+  def item
+    @item = Item.find(params[:id])
+  end
 
   def b_list
-    binding.pry
     @b_list = BList.find(params[:b_list_id])
   end
 
-  def item
-    @item = Item.new
-  end
   def item_params
     params.require(:item).permit(:name, :due_date, :location)
   end
