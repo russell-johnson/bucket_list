@@ -1,2 +1,8 @@
 <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
-<h2>Welcome <%= current_user.first_name %></h2>
+<h2 class="welcome">Welcome <%= current_user.first_name %> to your BUCKET LIST!</h2>
+<p><%= link_to 'New Bucket List', new_b_list_path %>
+<% if @b_lists.any? %>
+  <% @b_lists.each do |b| %>
+    <h3><%= link_to "#{b.name}", b_list_path(b.id) %></h3>
+  <% end %> 
+<% end %>

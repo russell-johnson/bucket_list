@@ -1,2 +1,15 @@
-<h1>BLists#show</h1>
-<p>Find me in app/views/b_lists/show.html.erb</p>
+<h1><%= "#{@b_list.name}" %></h1>
+
+
+
+<% if @items.any? %>
+  <% @items.each do |item| %>
+    <p>name: <%= item.name %></p>
+    <p>Due Date: <%= item.due_date %></p>
+    <p>location: <%= item.location %></p>
+  <% end %>
+<% else %>
+  <%= link_to 'Add Item', new_b_list_item_path(@b_list) %>
+<% end %>
+  <%= link_to '|  Edit  |', edit_b_list_path(@b_list) %>
+  <%= link_to '|  Edit List Items  |', edit_b_list_item_path(@b_list, @item) %>

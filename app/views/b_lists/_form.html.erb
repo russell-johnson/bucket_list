@@ -1,0 +1,15 @@
+<%= form_for @b_list do |f| %>
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name, placeholder: 'Name'%>
+  <br/>
+  <br/>
+  <%= f.label :date_created, 'Date Created' %>
+  <%= f.text_field :date_created, placeholder: 'Date Created' %>
+  <br/>
+  <br/>
+  <%= f.label :date_completed, 'Date Completed' %>
+  <%= f.text_field :date_completed, placeholder: 'Date Completed' %>
+  <br/>
+  <br/>
+  <%= f.submit %>
+<% end %>
