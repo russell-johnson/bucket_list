@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(params[:item].permit(:name, :due_date, :location))
-      redirect_to b_list_path(params[:id])
+      redirect_to b_list_path(params[:b_list_id])
     else
       render :edit
     end
