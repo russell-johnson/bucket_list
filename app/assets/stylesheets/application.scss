@@ -6,3 +6,13 @@ body {
   background-color: hsla(15, 100%, 64%, 0.95); 
 }
 
+.link-btn {
+  border: none;
+  border-radius: 0px;
+  display: inline-block;
+  line-height: 36px;
+  text-transform: none;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: none;
+  box-shadow: none !important;
+}

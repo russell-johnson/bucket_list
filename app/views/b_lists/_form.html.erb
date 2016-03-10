@@ -1,15 +1,17 @@
-<%= form_for @b_list do |f| %>
-  <%= f.label :name, 'Name' %>
-  <%= f.text_field :name, placeholder: 'Name'%>
-  <br/>
-  <br/>
-  <%= f.label :date_created, 'Date Created' %>
-  <%= f.text_field :date_created, placeholder: 'Date Created' %>
-  <br/>
-  <br/>
-  <%= f.label :date_completed, 'Date Completed' %>
-  <%= f.text_field :date_completed, placeholder: 'Date Completed' %>
-  <br/>
-  <br/>
-  <%= f.submit %>
-<% end %>
+<form class="col s12">
+  <div class="row">
+    <%= form_for @b_list do |f| %>
+      <div class="input-field col s12">
+        <%= f.text_field :name, placeholder: 'Thing To Do'%>
+      </div>
+      <div class="input-field col s6">
+        <%= f.text_field :date_created, placeholder: 'Date Created' %>
+      </div>
+      <div class="input-field col s6">
+        <%= f.text_field :date_completed, placeholder: 'Desired Completion Date' %>
+      </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</form>
+
