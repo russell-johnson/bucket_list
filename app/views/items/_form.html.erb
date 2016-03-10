@@ -1,16 +1,6 @@
-
 <%= form_for [@b_list, @item] do |f| %>
-  <%= f.label :name, 'Name' %>
   <%= f.text_field :name, placeholder: 'Name'%>
-  <br/>
-  <br/>
-  <%= f.label :due_date, 'Due Date' %>
   <%= f.text_field :due_date, placeholder: 'Due Date' %>
-  <br/>
-  <br/>
-  <%= f.label :location, 'Location' %>
   <%= f.text_field :location, placeholder: 'Location' %>
-  <br/>
-  <br/>
   <%= f.submit %>
 <% end %>
