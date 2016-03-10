@@ -1,19 +1,13 @@
-<h1><%= "#{@b_list.name}" %></h1>
+<div class="section">
+  <div class="container">
+    <h2 class="grey-text text-lighten-3"><%= "#{@b_list.name}" %></h2>
+    <h5>
+      <%= link_to '|  Edit  |', edit_b_list_path(@b_list) %>
+      <%= link_to '|  Delete Bucket  |', b_list_path(@b_list), method: :delete %>
+    </h5>
+  </div>
+</div>
+<%= render(partial: 'formshow') %>
 
 
 
-<% if @items.any? %>
-  <% @items.each do |item| %>
-    <p>name: <%= item.name %></p>
-    <p>Due Date: <%= item.due_date %></p>
-    <p>location: <%= item.location %></p>
-    <%= link_to '|  Edit Item  |', edit_b_list_item_path(@b_list, item) %>
-    <%= button_to '| Delete Item! |', b_list_item_path(@b_list, item), method: :delete %>
-  <% end %>
-<% else %>
-  <%= link_to 'Add Item', new_b_list_item_path(@b_list) %>
-<% end %>
-<br/>
-  <%= link_to '|  Edit  |', edit_b_list_path(@b_list) %>
-  <%= link_to '|  Add Bucket  |', new_b_list_path %>
-  <%= button_to '|  Delete  |', b_list_path(@b_list), method: :delete %>
