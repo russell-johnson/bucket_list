@@ -1,26 +1,25 @@
 <div class="section">
-  <div class="container">
-    <h2 class="grey-text text-lighten-3">Welcome</h2>
-    <h5 class="grey-text text-darken-2"><%= current_user.first_name %></h5>
-  </div>
+  <h2 class="white-text">Welcome</h2>
+  <h5><%= current_user.first_name %></h5>
 </div>
 <div class="divider"></div>
- <% if @b_lists.any? %>
-   <div class="row">
-     <% @b_lists.each do |b| %>
-       <div class="col s12 m4">
-         <div class="card small grey darken-3">
-           <div class="card-content white-text">
-             <h4>
-               <%= link_to "#{b.name}", b_list_path(b.id), class: "white-text" %>
-             </h4>
-           </div>
-           <div class="card-action">
-             <%= link_to "Edit" %>
-             <%= link_to "Delete" %>
-           </div>
-         </div>
-       </div>
-     <% end %> 
-   </div>
- <% end %>
+
+  <% if @b_lists.any? %>
+    <div class="row">
+      <% @b_lists.each do |b| %>
+        <div class="col s12 m4">
+          <div class="card small grey darken-3">
+            <div class="card-content white-text">
+                <h4 class="valign">
+                  <%= link_to "#{b.name}", b_list_path(b.id), class: "white-text" %>
+                </h4>
+            </div>
+            <div class="card-action">
+              <%= link_to "Edit" %>
+              <%= link_to "Delete", b_list_path(b), method: :delete %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>

@@ -2,4 +2,8 @@
  <h2 class="grey-text text-lighten-3">Welcome</h2>
  <h5 class="grey-text text-darken-2"><%= current_user.first_name %></h5>
 </div>
-<%= render(partial: 'formshow') %>
+<% if @b_lists.any?  %>
+  <% @b_lists.each do |b_list| %>
+    <%= render(partial: 'formshow', locals: {b_list: b_list}) %>
+  <% end %>
+<% end %>

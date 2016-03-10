@@ -26,9 +26,8 @@ class BListsController < ApplicationController
 
   def create
     @b_list = BList.new(b_list_params)
-
     if @b_list.save
-      redirect_to b_lists_path(@b_list)
+      redirect_to root_path(@b_list)
     else
       render :new
     end
@@ -36,7 +35,7 @@ class BListsController < ApplicationController
 
   def destroy
     @b_list.destroy
-    redirect_to b_lists_path
+    redirect_to root_path
   end
 
 

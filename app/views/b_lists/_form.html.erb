@@ -1,19 +1,16 @@
-<form class="col s12">
-  <div class="row">
-    <%= form_for @b_list do |f| %>
-      <div class="input-field col s12">
-        <%= f.text_field :name, placeholder: 'Thing To Do'%>
-      </div>
-      <div class="input-field col s6">
-        <%= f.text_field :date_created, placeholder: 'Date Created' %>
-      </div>
-      <div class="input-field col s6">
-        <%= f.text_field :date_completed, placeholder: 'Desired Completion Date' %>
-      </div>
-      <div class="center-align">
-        <a class="waves-effect waves-light grey btn-large"><%= f.submit %></a>
-      </div>
-    <% end %>
-  </div>
-</form>
-
+<div class="row">
+  <%= form_for b_list do |f| %>
+    <div class="input-field col s12">
+      <%= f.text_field :name, placeholder: 'Thing To Do'%>
+    </div>
+    <div class="input-field col s6">
+      <%= f.text_field :date_created, placeholder: 'Date Created' %>
+    </div>
+    <div class="input-field col s6">
+      <%= f.text_field :date_completed, placeholder: 'Desired Completion Date' %>
+    </div>
+    <div class="center-align">
+      <%= f.submit class: "waves-effect waves-light grey btn-large" %>
+    </div>
+  <% end %>
+</div>
