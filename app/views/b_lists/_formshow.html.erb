@@ -1,25 +1,19 @@
 <div class="divider"></div>
-  <% if @items.any? %>
-    <div class="row">
-      <% @items.each do |item| %>
-        <div class="col s12 m4">
-          <div class="card small grey text-darken-3">
-            <div class="card-content white-text">
-              <h5>
-                <p>Name: <%= item.name %></p>
-                <p>Due Date: <%= item.due_date %></p>
-                <p>Location: <%= item.location %></p>
-              </h5>
-            </div>
-            <div class="card-action">
-              <%= link_to 'Edit Item', edit_b_list_item_path(@b_list, item) %>
-              <%= link_to 'Delete Item', b_list_item_path(@b_list, item), method: :delete %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-      <% else %>
-      <%= link_to 'Add Item', new_b_list_item_path(@b_list) %>
-    </div>
-  <% end %>
+<div class="row">
+ <% b_list.items.each do |item| %>
+   <div class="col s12 m4">
+     <div class="card small grey text-darken-3">
+       <div class="card-content white-text">
+         <h5>
+           <p>Name: <%= item.name %></p>
+           <p>Due Date: <%= item.due_date %></p>
+           <p>Location: <%= item.location %></p>
+         </h5>
+       </div>
+       <div class="card-action">
+         <%= link_to 'Edit Item', edit_b_list_item_path(b_list, item) %>
+       </div>
+     </div>
+   </div>
+ <% end %>
 </div>
