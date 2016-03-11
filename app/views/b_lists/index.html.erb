@@ -4,6 +4,6 @@
 </div>
 <% if @b_lists.any?  %>
   <% @b_lists.each do |b_list| %>
-    <%= render(partial: 'formshow', locals: {b_list: b_list}) %>
+    <%= render(partial: 'card', locals: {b_list: b_list}) %>
   <% end %>
 <% end %>

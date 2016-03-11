@@ -15,8 +15,14 @@
                 </h4>
             </div>
             <div class="card-action">
-              <%= link_to "Edit", edit_b_list_path(b) %>
-              <%= link_to "Delete", b_list_path(b), method: :delete %>
+              <div class="right">
+                <%= form_for b do |f| %>
+                  <%= f.check_box :completed %>
+                  <%= f.label :completed %>
+                <% end %>
+              </div>
+                <%= link_to "Edit", edit_b_list_path(b) %>
+                <%= link_to "Delete", b_list_path(b), method: :delete %>
             </div>
           </div>
         </div>
