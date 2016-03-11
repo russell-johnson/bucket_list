@@ -13,7 +13,7 @@ class BListsController < ApplicationController
 
   def update
     if @b_list.update(b_list_params)
-      redirect_to b_lists_path
+      redirect_to root_path
     else
       render :edit
     end
