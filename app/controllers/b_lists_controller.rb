@@ -20,7 +20,7 @@ class BListsController < ApplicationController
   end
 
   def new
-    
+
     @b_list = BList.new
   end
 

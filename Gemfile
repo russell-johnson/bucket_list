@@ -44,6 +44,10 @@ group :development, :test do
   gem 'bullet'
   gem 'rack-mini-profiler'
   gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'simplecov'
 end
 
 group :development do
